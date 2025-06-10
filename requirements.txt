@@ -1,0 +1,11 @@
+comet-toolbox
+mne
+numpy
+pandas
+matplotlib
+seaborn
+nilearn
+scikit-learn
+jupyterquiz
+ipywidgets
+jupyter-book

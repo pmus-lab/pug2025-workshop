@@ -1,0 +1,50 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: book/introduction
+parts:
+- caption: Introduction to Python
+  chapters:
+    - file: book/1_python/1_Setup/0_Introduction
+      sections:
+        - file: book/1_python/1_Setup/1_Installation
+        - file: book/1_python/1_Setup/2_Usage
+        - file: book/1_python/1_Setup/3_Exercises
+    - file: book/1_python/2_Data_structures/0_Introduction
+      sections:
+        - file: book/1_python/2_Data_structures/1_Variables and data types
+        - file: book/1_python/2_Data_structures/2_Built-in types
+        - file: book/1_python/2_Data_structures/3_Collections
+        - file: book/1_python/2_Data_structures/4_Exercises
+    - file: book/1_python/3_Control_flow/0_Introduction
+      sections:
+        - file: book/1_python/3_Control_flow/1_Conditionals
+        - file: book/1_python/3_Control_flow/2_Loops
+        - file: book/1_python/3_Control_flow/3_Exercises
+    - file: book/1_python/4_Objects/0_Introduction
+      sections:
+        - file: book/1_python/4_Objects/1_Everything_is_an_object
+        - file: book/1_python/4_Objects/2_Namespaces and imports
+        - file: book/1_python/4_Objects/3_Functions
+        - file: book/1_python/4_Objects/4_Classes
+        - file: book/1_python/4_Objects/5_Exercises    
+    - file: book/1_python/5_Scientific_Comp/0_Introduction
+      sections:
+        - file: book/1_python/5_Scientific_Comp/1_numpy
+        - file: book/1_python/5_Scientific_Comp/2_pandas
+        - file: book/1_python/5_Scientific_Comp/3_matplotlib
+        - file: book/1_python/5_Scientific_Comp/4_Exercises
+- caption: Multiverse Analysis
+  chapters:
+    - file: book/2_multiverse/multiverse_overview
+    - file: book/2_multiverse/multiverse_application
+- caption: Practical Projects
+  chapters:
+    - file: book/3_practical/fmri_multiverse
+    - file: book/3_practical/eeg_multiverse
+- caption: Additional Materials
+  chapters:
+    - file: book/4_additional/solutions_fmri
+    - file: book/4_additional/solutions_eeg
+    - file: book/4_additional/references
