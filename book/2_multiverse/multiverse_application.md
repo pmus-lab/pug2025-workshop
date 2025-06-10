@@ -12,6 +12,6 @@ kernelspec:
   name: python3
 ---
 
-# <i class="fa-solid fa-shuttle-space"></i> Multiverse Application
+# <i class="fa-solid fa-rocket"></i> Multiverse Application
 
 <iframe width="800" height="450" src="../../_static/placeholder_slides.pdf" frameborder="0" allowfullscreen></iframe>
