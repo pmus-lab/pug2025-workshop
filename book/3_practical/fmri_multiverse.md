@@ -12,4 +12,4 @@ kernelspec:
   name: python3
 ---
 
-# <i class="fa-solid fa-divide"></i> fMRI Multiverse
+# <i class="fa-solid fa-meteor"></i> fMRI Multiverse

@@ -12,7 +12,7 @@ kernelspec:
   name: python3
 ---
 
-# Setting Things Up
+# <i class="fa-brands fa-python"></i> Setting Things Up
 
 **NOTE: The entire Python chapter is a shortened version of the tutorials in the [psy111 course](https://mibur1.github.io/psy111/). Feel free to check this out in case you need more detailed explanations for some topics.**
 

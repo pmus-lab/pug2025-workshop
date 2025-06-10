@@ -12,4 +12,4 @@ kernelspec:
   name: python3
 ---
 
-# <i class="fa-solid fa-divide"></i> fMRI Solutions
+# <i class="fa-solid fa-magnifying-glass-chart"></i> fMRI Solutions
