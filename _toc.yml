@@ -37,7 +37,7 @@ parts:
         - file: book/1_python/5_Scientific_Comp/4_Exercises
 - caption: Multiverse Analysis
   chapters:
-    - file: book/2_multiverse/multiverse_overview
+    - file: book/2_multiverse/multiverse_theory
     - file: book/2_multiverse/multiverse_application
 - caption: Practical Projects
   chapters:
@@ -45,6 +45,9 @@ parts:
     - file: book/3_practical/eeg_multiverse
 - caption: Additional Materials
   chapters:
-    - file: book/4_additional/solutions_fmri
-    - file: book/4_additional/solutions_eeg
+    - file: book/4_additional/solutions
+      sections:
+        - file: book/4_additional/solutions_python
+        - file: book/4_additional/solutions_fmri
+        - file: book/4_additional/solutions_eeg
     - file: book/4_additional/references

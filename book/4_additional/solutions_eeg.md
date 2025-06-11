@@ -12,4 +12,4 @@ kernelspec:
   name: python3
 ---
 
-# <i class="fa-solid fa-magnifying-glass-chart"></i> EEG Solutions
+# EEG Solutions

@@ -20,14 +20,28 @@ This website contains all the workshop materials to ensure you will be able to g
 
 ## Schedule
 
-Monday  
-- 09:00 - 12:00: Introduction to Python
-- 13:00 - 15:00: Multiverse Overview
-- 15:30 - 17:30: Multiverse Applications
+### Tuesday
 
-Tuesday 
-- 09:00 - 10:30: fMRI Multiverse (Practical)
-- 11:00 - 12:30: EEG Multiverse (Practical)
+| Time         | Session                                 |
+| ------------ | --------------------------------------- |
+| 09:00–10:30  | Introduction to Python I                |
+| 10:30–11:00  | Coffee break                            |
+| 11:00–12:30  | Introduction to Python II               |
+| 12:30–13:30  | Lunch break                             |
+| 13:30–15:00  | Multiverse Theory and Conceptualization |
+| 15:00–15:30  | Coffee break                            |
+| 15:30–17:00  | Multiverse in Neuroimaging              |
+| 17:00–17:15  | Break                                   |
+| 17:15–18:00  | Conceptualization Activity              |
+
+### Wednesday
+
+| Time         | Session                    |
+| ------------ | -------------------------- |
+| 09:00–11:00  | fMRI Multiverse (Practical)|
+| 11:00–11:30  | Coffee break               |
+| 11:30–13:00  | EEG Multiverse (Practical) |
+
 
 ## Table of contents
 
