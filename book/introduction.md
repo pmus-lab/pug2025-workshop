@@ -20,9 +20,7 @@ This website contains all the workshop materials to ensure you will be able to g
 
 ## Schedule
 
-### Tuesday
-
-| Time         | Session                                 |
+| Tuesday      |                                         |
 | ------------ | --------------------------------------- |
 | 09:00–10:30  | Introduction to Python I                |
 | 10:30–11:00  | Coffee break                            |
@@ -34,9 +32,8 @@ This website contains all the workshop materials to ensure you will be able to g
 | 17:00–17:15  | Break                                   |
 | 17:15–18:00  | Conceptualization Activity              |
 
-### Wednesday
 
-| Time         | Session                    |
+| Wednesday    |                            |
 | ------------ | -------------------------- |
 | 09:00–11:00  | fMRI Multiverse (Practical)|
 | 11:00–11:30  | Coffee break               |
