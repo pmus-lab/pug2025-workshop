@@ -16,7 +16,9 @@ kernelspec:
 
 Welcome to the *Multiverse Analysis for Neuroimaging* pre-conference workshop at PuG 2025! 
 
-This website contains all the workshop materials to ensure you will be able to get back to them whenever necessary. Further, this book aims to be a standalone resource for whomever will stumble across it :)
+This website contains all materials covered over the next two days, allowing you to revisit them at your convenience. We also hope this book serves as a useful resource for any reader who encounters it beyond the workshop.
+
+The workshop is led by [Micha Burkhardt](https://uol.de/psychologie/statistik/micha-burkhardt), [Dr. Cassie Short](https://uol.de/psychologie/statistik/cassie-short), and [Dr. Daniel Kristanto](https://uol.de/psychologie/statistik/daniel-kristanto). If you have any questions in the future, please feel free to contact us via email.
 
 ## Schedule
 
@@ -32,12 +34,11 @@ This website contains all the workshop materials to ensure you will be able to g
 | 17:00–17:15  | Break                                   |
 | 17:15–18:00  | Conceptualization Activity              |
 
-
-| Wednesday    |                            |
-| ------------ | -------------------------- |
-| 09:00–11:00  | fMRI Multiverse (Practical)|
-| 11:00–11:30  | Coffee break               |
-| 11:30–13:00  | EEG Multiverse (Practical) |
+| Wednesday    |                                         |
+| ------------ | ----------------------------------------|
+| 09:00–11:00  | fMRI Multiverse (Practical)             |
+| 11:00–11:30  | Coffee break                            |
+| 11:30–13:00  | EEG Multiverse (Practical)              |
 
 
 ## Table of contents

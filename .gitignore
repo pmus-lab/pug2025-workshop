@@ -5,4 +5,4 @@
 # Folders
 _build/
 .conda/
-book/3_practical/data/*
+book/3_practical/data

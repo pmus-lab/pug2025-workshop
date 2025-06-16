@@ -1,0 +1,65 @@
+Universe,Decision 1,Value 1,Decision 2,Value 2,Decision 3,Value 3,Decision 4,Value 4
+Universe_1,baseline,-0.2,reference,"['A1', 'A2']",window,"(0.4, 0.6)",elec_set,"['P3', 'P4', 'CP1', 'CP2']"
+Universe_2,baseline,-0.2,reference,"['A1', 'A2']",window,"(0.4, 0.6)",elec_set,"['P3', 'Pz', 'P4']"
+Universe_3,baseline,-0.2,reference,"['A1', 'A2']",window,"(0.4, 0.6)",elec_set,"['CP1', 'CP2']"
+Universe_4,baseline,-0.2,reference,"['A1', 'A2']",window,"(0.4, 0.6)",elec_set,['Pz']
+Universe_5,baseline,-0.2,reference,"['A1', 'A2']",window,"(0.5, 0.7)",elec_set,"['P3', 'P4', 'CP1', 'CP2']"
+Universe_6,baseline,-0.2,reference,"['A1', 'A2']",window,"(0.5, 0.7)",elec_set,"['P3', 'Pz', 'P4']"
+Universe_7,baseline,-0.2,reference,"['A1', 'A2']",window,"(0.5, 0.7)",elec_set,"['CP1', 'CP2']"
+Universe_8,baseline,-0.2,reference,"['A1', 'A2']",window,"(0.5, 0.7)",elec_set,['Pz']
+Universe_9,baseline,-0.2,reference,"['A1', 'A2']",window,"(0.45, 0.75)",elec_set,"['P3', 'P4', 'CP1', 'CP2']"
+Universe_10,baseline,-0.2,reference,"['A1', 'A2']",window,"(0.45, 0.75)",elec_set,"['P3', 'Pz', 'P4']"
+Universe_11,baseline,-0.2,reference,"['A1', 'A2']",window,"(0.45, 0.75)",elec_set,"['CP1', 'CP2']"
+Universe_12,baseline,-0.2,reference,"['A1', 'A2']",window,"(0.45, 0.75)",elec_set,['Pz']
+Universe_13,baseline,-0.2,reference,"['A1', 'A2']",window,'SAV',elec_set,"['P3', 'P4', 'CP1', 'CP2']"
+Universe_14,baseline,-0.2,reference,"['A1', 'A2']",window,'SAV',elec_set,"['P3', 'Pz', 'P4']"
+Universe_15,baseline,-0.2,reference,"['A1', 'A2']",window,'SAV',elec_set,"['CP1', 'CP2']"
+Universe_16,baseline,-0.2,reference,"['A1', 'A2']",window,'SAV',elec_set,['Pz']
+Universe_17,baseline,-0.2,reference,'average',window,"(0.4, 0.6)",elec_set,"['P3', 'P4', 'CP1', 'CP2']"
+Universe_18,baseline,-0.2,reference,'average',window,"(0.4, 0.6)",elec_set,"['P3', 'Pz', 'P4']"
+Universe_19,baseline,-0.2,reference,'average',window,"(0.4, 0.6)",elec_set,"['CP1', 'CP2']"
+Universe_20,baseline,-0.2,reference,'average',window,"(0.4, 0.6)",elec_set,['Pz']
+Universe_21,baseline,-0.2,reference,'average',window,"(0.5, 0.7)",elec_set,"['P3', 'P4', 'CP1', 'CP2']"
+Universe_22,baseline,-0.2,reference,'average',window,"(0.5, 0.7)",elec_set,"['P3', 'Pz', 'P4']"
+Universe_23,baseline,-0.2,reference,'average',window,"(0.5, 0.7)",elec_set,"['CP1', 'CP2']"
+Universe_24,baseline,-0.2,reference,'average',window,"(0.5, 0.7)",elec_set,['Pz']
+Universe_25,baseline,-0.2,reference,'average',window,"(0.45, 0.75)",elec_set,"['P3', 'P4', 'CP1', 'CP2']"
+Universe_26,baseline,-0.2,reference,'average',window,"(0.45, 0.75)",elec_set,"['P3', 'Pz', 'P4']"
+Universe_27,baseline,-0.2,reference,'average',window,"(0.45, 0.75)",elec_set,"['CP1', 'CP2']"
+Universe_28,baseline,-0.2,reference,'average',window,"(0.45, 0.75)",elec_set,['Pz']
+Universe_29,baseline,-0.2,reference,'average',window,'SAV',elec_set,"['P3', 'P4', 'CP1', 'CP2']"
+Universe_30,baseline,-0.2,reference,'average',window,'SAV',elec_set,"['P3', 'Pz', 'P4']"
+Universe_31,baseline,-0.2,reference,'average',window,'SAV',elec_set,"['CP1', 'CP2']"
+Universe_32,baseline,-0.2,reference,'average',window,'SAV',elec_set,['Pz']
+Universe_33,baseline,-0.1,reference,"['A1', 'A2']",window,"(0.4, 0.6)",elec_set,"['P3', 'P4', 'CP1', 'CP2']"
+Universe_34,baseline,-0.1,reference,"['A1', 'A2']",window,"(0.4, 0.6)",elec_set,"['P3', 'Pz', 'P4']"
+Universe_35,baseline,-0.1,reference,"['A1', 'A2']",window,"(0.4, 0.6)",elec_set,"['CP1', 'CP2']"
+Universe_36,baseline,-0.1,reference,"['A1', 'A2']",window,"(0.4, 0.6)",elec_set,['Pz']
+Universe_37,baseline,-0.1,reference,"['A1', 'A2']",window,"(0.5, 0.7)",elec_set,"['P3', 'P4', 'CP1', 'CP2']"
+Universe_38,baseline,-0.1,reference,"['A1', 'A2']",window,"(0.5, 0.7)",elec_set,"['P3', 'Pz', 'P4']"
+Universe_39,baseline,-0.1,reference,"['A1', 'A2']",window,"(0.5, 0.7)",elec_set,"['CP1', 'CP2']"
+Universe_40,baseline,-0.1,reference,"['A1', 'A2']",window,"(0.5, 0.7)",elec_set,['Pz']
+Universe_41,baseline,-0.1,reference,"['A1', 'A2']",window,"(0.45, 0.75)",elec_set,"['P3', 'P4', 'CP1', 'CP2']"
+Universe_42,baseline,-0.1,reference,"['A1', 'A2']",window,"(0.45, 0.75)",elec_set,"['P3', 'Pz', 'P4']"
+Universe_43,baseline,-0.1,reference,"['A1', 'A2']",window,"(0.45, 0.75)",elec_set,"['CP1', 'CP2']"
+Universe_44,baseline,-0.1,reference,"['A1', 'A2']",window,"(0.45, 0.75)",elec_set,['Pz']
+Universe_45,baseline,-0.1,reference,"['A1', 'A2']",window,'SAV',elec_set,"['P3', 'P4', 'CP1', 'CP2']"
+Universe_46,baseline,-0.1,reference,"['A1', 'A2']",window,'SAV',elec_set,"['P3', 'Pz', 'P4']"
+Universe_47,baseline,-0.1,reference,"['A1', 'A2']",window,'SAV',elec_set,"['CP1', 'CP2']"
+Universe_48,baseline,-0.1,reference,"['A1', 'A2']",window,'SAV',elec_set,['Pz']
+Universe_49,baseline,-0.1,reference,'average',window,"(0.4, 0.6)",elec_set,"['P3', 'P4', 'CP1', 'CP2']"
+Universe_50,baseline,-0.1,reference,'average',window,"(0.4, 0.6)",elec_set,"['P3', 'Pz', 'P4']"
+Universe_51,baseline,-0.1,reference,'average',window,"(0.4, 0.6)",elec_set,"['CP1', 'CP2']"
+Universe_52,baseline,-0.1,reference,'average',window,"(0.4, 0.6)",elec_set,['Pz']
+Universe_53,baseline,-0.1,reference,'average',window,"(0.5, 0.7)",elec_set,"['P3', 'P4', 'CP1', 'CP2']"
+Universe_54,baseline,-0.1,reference,'average',window,"(0.5, 0.7)",elec_set,"['P3', 'Pz', 'P4']"
+Universe_55,baseline,-0.1,reference,'average',window,"(0.5, 0.7)",elec_set,"['CP1', 'CP2']"
+Universe_56,baseline,-0.1,reference,'average',window,"(0.5, 0.7)",elec_set,['Pz']
+Universe_57,baseline,-0.1,reference,'average',window,"(0.45, 0.75)",elec_set,"['P3', 'P4', 'CP1', 'CP2']"
+Universe_58,baseline,-0.1,reference,'average',window,"(0.45, 0.75)",elec_set,"['P3', 'Pz', 'P4']"
+Universe_59,baseline,-0.1,reference,'average',window,"(0.45, 0.75)",elec_set,"['CP1', 'CP2']"
+Universe_60,baseline,-0.1,reference,'average',window,"(0.45, 0.75)",elec_set,['Pz']
+Universe_61,baseline,-0.1,reference,'average',window,'SAV',elec_set,"['P3', 'P4', 'CP1', 'CP2']"
+Universe_62,baseline,-0.1,reference,'average',window,'SAV',elec_set,"['P3', 'Pz', 'P4']"
+Universe_63,baseline,-0.1,reference,'average',window,'SAV',elec_set,"['CP1', 'CP2']"
+Universe_64,baseline,-0.1,reference,'average',window,'SAV',elec_set,['Pz']
