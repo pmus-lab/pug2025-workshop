@@ -47,7 +47,7 @@ The most important built-in data strucutures are:
 
 In fields like neuroscience, datasets can be large and often have more than two dimensions. For example, think of an fMRI scan composed of individual voxels (cubes) in three-dimensional space. And naturally, if you obtained more than one fMRI scan over time, you might have this as a fourth dimension. In such cases, **n-dimensional arrays** are a good way of storing and handling your data, as they do so as a single object. In any case, arrays are *contiguious*, meaning they have no "holes", and they are *homogenous*, meaning they only consist of a single data type.
 
-```{figure} ../../../_static/figures/cubes.png
+```{figure} figures/cubes.png
 ---
 width: 100%
 name: arrays
@@ -298,145 +298,9 @@ yeatman_subset = yeatman_data[["Age", "IQ"]]
 print(yeatman_subset.head())
 ```
 
-#### Computations
-
-Like NumPy arrays, Pandas DataFrames also have many methods that allow for computations. However, as we only deal with tabular data, the dimensions are always the same, with the columns being the variables and the rows being the observations. One can simply calculate the means of all the variables in the DataFrame:
-
-```{code-cell} ipython3
-yeatman_means = yeatman_data.mean(numeric_only=True)
-print(yeatman_means)
-print(yeatman_means["Age"])
-```
-
-Since not all variables are numeric, we include a `numeric_only=True)` as an argument of the mean function. We can also directly calculate the mean for individual series:
-
-```{code-cell} ipython3
-yeatman_data["IQ"].mean()
-```
-
-We can further perform arithmetics on DataFrames. For example, we could calculate a standardized z-score for the age of each subject.
-
-```{code-cell} ipython3
-age_mean = yeatman_data["Age"].mean()
-age_std = yeatman_data["Age"].std()
-print((yeatman_data["Age"] - age_mean ) / age_std)
-```
-
-A useful thing is to then save the result as a new variable in our DataFrame. For example, we can create a new column called `Age_zscore` and assign our results to it:
-
-```{code-cell} ipython3
-yeatman_data["Age_zscore"] = (yeatman_data["Age"] - age_mean ) / age_std
-print(yeatman_data.head())
-```
-
-#### Filtering
-
-Similar to logical indexing in NumPy, we can also filter our data set based on some properties. For example, let's assume we only want be able to filter subjects below the age of 18 in our analysis. We can then simply create a new boolean variable in the DataFrame which codes for this condition:
-
-```{code-cell} ipython3
-yeatman_data["Age_below_18"] = yeatman_data["Age"] < 18
-print(yeatman_data.head())
-```
-
-As you can see, we have now extended our original DataFrame by another column which tells us if the correspoding subjects are younger than 18.
-
-#### MultiIndex
-
-Sometimes we want to select groups made up of combinations of variables. For example, we might want to analyze the data based on both gender and age. One way of doing this is to change the index of the DataFrame to be made up of more than one column. This is called a *MultiIndex DataFrame*. We can do so by applying the `set_index()` method of a DataFrame to create a new kind of index:
-
-```{code-cell} ipython3
-multi_index = yeatman_data.set_index(["Gender", "Age_below_18"])
-print(multi_index.head())
-```
-
-You can now see that we have two indices. This means we can apply the `.loc` method to select rows based on both indices:
-
-```{code-cell} ipython3
-male_below_18 = multi_index.loc["Male", True]
-print(male_below_18.describe())
-```
-
-This might already seem useful, but it can become quite cumbersome if you want to repeat this for many kind of combinations. And because grouping data into different subgroups is such a common pattern in data analysis, Pandas offers a built-in way of doing so, which we will explore in the following subsection.
-
-#### Split-Apply-Combine
-
-A usual problem we are faced with in data analysis is the following: We (1) want to take a data set and split it into subsets, (2) we then independently apply some operation to each subset and (3) combine the results of all independent operations into a new data set. This pattern ins called *split-apply-combine*.
-
-For example, let's start with splitting the data by the `Gender` column:
-
-```{code-cell} ipython3
-gender_groups = yeatman_data.groupby("Gender")
-```
-
-The newly `gender_grous` variable is a `DataFrameGroupBy` object, which is pretty similar to a normal DataFrame, with the additional feature of having distinct groups whithin. This means we can perform many operations just as if we would be working with a normal DataFrame, with the only difference being the operation being applied independently to each subset.
-
-For example, we can calculate the mean for each group:
-
-```{code-cell} ipython3
-print(gender_groups.mean(numeric_only=True))
-```
-
-The output of this operation is a DataFrame that contains the summary with th original DataFrame's `Gender` variable as the index. This means we can apply standard indexing operations on it as well to get e.g. the mean age of female subjects:
-
-```{code-cell} ipython3
-print(gender_groups.mean(numeric_only=True).loc["Female", "Age"])
-```
-
-We can further group by multiple indices:
-
-```{code-cell} ipython3
-gender_age_groups = yeatman_data.groupby(["Gender", "Age_below_18"])
-print(gender_age_groups.mean(numeric_only=True))
-```
-
-#### Joining Tables
-
-Another useful feature of Pandas is its ability to join data. For example, lets assume we have three DataFrames with the same columns but different indices. This could for example happen if you would measure the same variables for multiple subjects over three different measurement days. So the index would be the individual subject, and the three DataFrames would be the data you aquired on e.g. Monday, Tuesday, and Wednesday:
-
-```{code-cell} ipython3
-df1 = pd.DataFrame({'A': ['A0', 'A1', 'A2', 'A3'],
-                    'B': ['B0', 'B1', 'B2', 'B3'],
-                    'C': ['C0', 'C1', 'C2', 'C3'],
-                    'D': ['D0', 'D1', 'D2', 'D3']},
-                    index=[0, 1, 2, 3])
-df2 = pd.DataFrame({'A': ['A4', 'A5', 'A6', 'A7'],
-                    'B': ['B4', 'B5', 'B6', 'B7'],
-                    'C': ['C4', 'C5', 'C6', 'C7'],
-                    'D': ['D4', 'D5', 'D6', 'D7']},
-                    index=[4, 5, 6, 7])
-df3 = pd.DataFrame({'A': ['A8', 'A9', 'A10', 'A11'],
-                    'B': ['B8', 'B9', 'B10', 'B11'],
-                    'C': ['C8', 'C9', 'C10', 'C11'],
-                    'D': ['D8', 'D9', 'D10', 'D11']},
-                    index=[8, 9, 10, 11])
-```
-
-Here it might be intuitive to just concatenate them into one big DataFrame:
-
-```{code-cell} ipython3
-combined_df = pd.concat([df1, df2, df3])
-print(combined_df)
-```
-
-In this case, we see that the concatenation is quite straightforward and succesful. But what about if the DataFrames are not of identical structure? Let's assume we have `df4` which has index values $2$ and $3$ as well as columns `B`and `D`in common with `df1`, but it also has the additional indices $6$ and $7$ ad well as a new column `F`:
-
-```{code-cell} ipython3
-df4 = pd.DataFrame({'B': ['B2', 'B3', 'B6', 'B7'],
-                    'D': ['D2', 'D4', 'D6', 'D7'],
-                    'F': ['F2', 'F3', 'F6', 'F7']},
-                    index=[2, 3, 6, 7])
-
-combined_df = pd.concat([df1, df4])
-print(combined_df)
-```
-
-The results look a bit more interesting. Here, Pandas tried to preserve as much information as possible, meaning the new DataFrame contains all columns/variables present in the two original DataFrames. Wherever possible, Pandas will merge the columns into one. This is true for column `D`, as it exists in both original DataFrames. For all other columns, Pandas preserves the input values and adds `NaN`s for the missing values.
-
-There are also other, more complicated, scenarios which we will not talk about here. For example, you might want to concatenate along the second axis instead of the first one. Don't be afraid of trying things out if you are ever in need of something more detailed. Getting used to working with data sets takes time, but no matter your specific goal, it will more likely than not be possible with just a few lines of code.
-
 ### Errors
 
-Before closing this section, I would like to emphazize on a few patterns of errors that are unique to Pandas and which you most likely will encounter at some point in your own projects.
+I would like to emphazize on a few patterns of errors that are unique to Pandas and which you most likely will encounter at some point in your own projects.
 
 One common pattern of errors comes from a confusion between Series and DataFame objects. And while we previously learned that they are indeed pretty similar, they still have some differences. For example, Series objects have a useful `.value_counts()` method that creates a table with the number of observations in the Series for every unique value. DataFrames however do not implement this method and will cause a Python `AttributeError`instead.
 
@@ -470,15 +334,9 @@ Finally, indexing errors are also common. Don't be discouraged by such errors, a
 
 A picture is worth a thousand words, and this holds especially true when working with complex data. Data, on its own, cannot tell its story, but through visualization, we can bring clarity to its patterns and insights. Effective data visualization is a critical part of the research process, allowing researchers to communicate findings clearly. Being a good researcher, therefore, also means being able to create compelling visual representations that make complex information accessible and understandable.
 
-There are a few different Python software packages that help you with visualizing data, for example [matplotlib](https://matplotlib.org/), [seaborn](https://seaborn.pydata.org/), or [plotly](https://plotly.com/python/). Please feel free to explore the examples on the websites to see what is possible with these libraries.
+There are a few different Python software packages that help you with visualizing data, for example [matplotlib](https://matplotlib.org/), [seaborn](https://seaborn.pydata.org/), or [plotly](https://plotly.com/python/). Please feel free to explore the examples on the websites to see what is possible with these libraries. For now, we will start with matplotlib, as it is probably the most widely used package out there (and also builds the foundation for e.g. seaborn).
 
-For now, we will start with matplotlib, as it is probably the most widely used package out there (and also builds the foundation for e.g. seaborn). Matplotlib was first developed nearly 20 years ago by John Hunter, a postdoctoral researcher in neuroscience at the University of Chicago. Frustrated by proprietary tools for visualizing brain data, he created an open-source alternative. What started as a solo project has since grown into a widely used library across many fields, from visualizing NASA’s Mars landings to Nobel Prize-winning gravitational wave research, and of course, neuroscience data. One of Matplotlib’s strengths is its fine-grained control over the appearance of visualizations. Let’s start with the basics before diving into these details and install matplotlib through the Conda terminal (if you have previously installed the requirements of the Jupyter book it will tell you that it is already installed):
-
-```
-pip install matplotlib
-```
-
-Matplotlib is a very powerful library with several different interfaces. The one you should almost always use is the `pyplot` module, which you can import with any of the two following two lines of code:
+Matplotlib is a powerful library with several different interfaces. The one you should almost always use is the `pyplot` module, which you can import with any of the two following two lines of code:
 
 ```{code-cell} ipython3
 from matplotlib import pyplot as plt

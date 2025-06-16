@@ -18,7 +18,7 @@ kernelspec:
 
 ## Installation
 
-We will use Python through a software package called **Conda**. Conda is an environment management system that is widely used in the Python community and beyond. Conda allows you to create isolated environments, which you can think of as self-contained "boxes" that contain specific versions of Python and other packages required for different projects. This isolation ensures that changes or updates in one environment do not affect others, making it easier to manage and switch between projects with different requirements.
+We will use Python through a software package called **Conda**. Conda is an environment management system that is widely used in the Python community and beyond. Conda allows you to create isolated environments, which you can think of as self-contained "boxes" that contain specific versions of Python and other packages required for different projects.
 
 ```{figure} figures/conda.png
 ---
@@ -78,7 +78,7 @@ pip list
 to display a list of all installed Python packages. As our environment is still new, this list is quite short. However, we are now ready to install any kind of Python package. Please to so for the `comet-toolbox` as well as the `mne` package, as we will require these two packages for the practical session tomorrow:
 
 ```
-pip install comet-toolbox mne[hdf5]
+pip install comet-toolbox "mne[hdf5]"
 ```
 
 If you then again type `pip list`, you will see that the list of installed packages now includes the NumPy. There are more things you can do with Conda, and if needed, you can refer to the [cheatsheet](https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf) for more information.

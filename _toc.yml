@@ -12,6 +12,13 @@ parts:
     - file: book/1_python/4_objects
     - file: book/1_python/5_scientific_computing
     - file: book/1_python/6_neuroimaging
+    - file: book/1_python/7_exercises
+      sections:
+        - file: book/1_python/exercises/data_structures_ex
+        - file: book/1_python/exercises/control_flow_ex
+        - file: book/1_python/exercises/objects_ex
+        - file: book/1_python/exercises/scientific_comp_ex
+        - file: book/1_python/exercises/neuroimaging_ex
 - caption: Multiverse Analysis
   chapters:
     - file: book/2_multiverse/multiverse_theory

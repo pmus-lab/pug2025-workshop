@@ -117,28 +117,6 @@ for page in pages:
 
 Here, we loop over each item/element of the list starting from the first. In each iteration of the loop, we assign the value to a variable called `page` which is then printed. `page` is a temporary variable, which means it will only exist whithin the scope of the loop and not anymore after.
 
-As a more practical application, imagine you’re in a classroom and need to hand out worksheets to each student. You wouldn’t want to say, "Hand this to the first student, then hand it to the second student, then hand it to the third student...":
-
-```{code-cell} ipython3
-students = ["Alice", "Bob", "Charlie", "Daisy"]
-
-print(f"Handing worksheet to {students[0]}")
-print(f"Handing worksheet to {students[1]}")
-print(f"Handing worksheet to {students[2]}")
-print(f"Handing worksheet to {students[3]}")
-```
-
-Instead, you’d say, “Hand this to every student one after the other.” This is the core of a loop: it lets you avoid doing the same task individually and instead repeats it for each item in a group.
-
-```{code-cell} ipython3
-students = ["Alice", "Bob", "Charlie", "Daisy"]
-
-for student in students:
-    print(f"Handing worksheet to {student}")
-```
-
-Now think about having 30 students, or even 100. Without a loop, you would then have to write the print statement 30 or 100 times, while the loop would stay completely identical and only take 2 lines of code. This is why using loops is such a useful thing to do!
-
 
 ### Counting loops: Doing something a fixed number of times
 

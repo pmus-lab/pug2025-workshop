@@ -88,20 +88,19 @@ print("The circumference of the cicle is", circumference)
 Strings are sequences of characters. In Python, we can define strings by enclosing zero or more characters in a pair of quotes. It does not matter whether you use single or double quotes and both work equally well as long as the opening and closing quotes match.
 
 ```{code-cell} ipython3
-string1 = "Hello"
-string2 = 'World'
+my_string = "Hello"
 ```
 
 There are many inbuilt functions you can use on strings, like figuring out their length:
 
 ```{code-cell} ipython3
-len(string1)
+len(my_string)
 ```
 
 Or converting them to lower case:
 
 ```{code-cell} ipython3
-string1.lower()
+my_string.lower()
 ```
 
 One thing you might have noticed is that these examples seem to use two different syntaxes. In the first example, `len()` seems to be a function which takes a string as its parameter (or *argument*), while in the other examples the function comes after the string with a *dot* notation `.upper()`. If this is a bit confusing do not worry, we will talk about this difference a bit later.
@@ -118,7 +117,7 @@ You can also do many more things like formatting the number of decimal points sh
 
 ### Booleans
 
-Handling Boolean values in Python is pretty much the same as in other programming languages. Boolean values can only take the value `True` (corresponding to 1) or `False` (corresonding to 0) and not other versions like `true` or `"False"`:
+Handling Boolean values in Python is pretty much the same as in other programming languages. Boolean values can only take the value `True` (corresponding to 1) or `False` (corresponding to 0) and not other versions like `true` or `"False"`:
 
 ```{code-cell} ipython3
 my_bool = True
@@ -170,4 +169,136 @@ The Python standard library includes the following data types:
 - Charater strings ("Hello", "World")
 - Boolean values (True, False)
 - No value (None)
+```
+
+## Collections
+
+Variables containing single values like an integer or a string will only get you so far. Many real-world applications for example require you to store a whole collection of values in a single data structure. Here, the most important and widely used solutions from the Python standard library are *lists*, *tuples*, and *dicts* (dictionaries).
+
+### Lists
+
+Lists are the most common collection in Python. They are a *heterogeneous* collection of objects, which means they are not limited to elements of a single type but can also contain multiple types if this is required. Lists are initalized with square brackets `[]` and their elements are separated through commas:
+
+```{code-cell}
+empty_list = []
+random_stuff = ["apple", 3.14, True, 4]
+```
+
+#### Indexing
+
+Lists are ordered collections, which means that the order of items is important and will not change (unless we specifically change it). This allows us to access individual elements of the list by specifying their position, which is also called an *index*. The process of acessing individual or multiple values from a data structure is analogously called *indexing*.
+
+To access the *i*th element in a list, we enclose the desired index *i* in square brackets. Note that Python, unlike for example MATLAB, uses zero-based indexing. This means the first element of a collection is at index 0, while index 1 returns the second element (and so forth).
+
+
+```{admonition} Zero-based indexing
+:class: attention
+
+Python uses zero-based indexing. You can intuitively understand this as index 0 being the start of a collection, and other positions being offsets from that start.
+```
+
+```{code-cell}
+random_stuff[0]
+```
+
+```{code-cell}
+random_stuff[1]
+```
+
+#### Slicing
+
+What if you want to retrieve more than a single element from a list? For this we can use *slicing* operations, which use the colon (:) operator:
+
+```{code-cell}
+random_stuff[1:3]
+```
+
+The colon is used to seperate a starting and a stopping index. Intuitively you can read this notation as "from random_stuff get items 1 to 3". Note that the starting position is *inclusive* (meaning it includes the item at position 1, which in this case is *3.14*) while the stopping index is *exclusive* (meaning that the item at posititon 3, which here would be *4*, is not included). If you are interested in some arguments for that logic, you can [refer to this 1982 "article" from Edsger Dijkstra](https://www.cs.utexas.edu/~EWD/ewd08xx/EWD831.PDF).
+
+#### Modifying lists
+
+Lists are *mutable* objects, which means they can be modified after they have been created. For example, we can replace a specific element with another element:
+
+```{code-cell}
+print("Before re-assignment:", random_stuff)
+random_stuff[0] = "banana"
+print("After re-assignment:", random_stuff)
+```
+
+Another common use case is to add new values to a list (for example once new results have been calculated). This can be done by using the `.append()` function on the list:
+
+```{code-cell}
+random_stuff.append("goodbye")
+random_stuff
+```
+
+There are many more things you can do to lists, like removing items or sorting the list. You can read up on these methods e.g. [here](https://docs.python.org/3/tutorial/datastructures.html).
+
+### Tuples
+
+Tuples are similar to lists in that they are an ordered colletion of elements. However, they are *immutable* in nature, meaning you can not change their content after creating them. For creating tuples, you simply use the round brackets instead of the square ones:
+
+```{code-cell}
+my_tuple = ("Hello", 1, 2, 3, 4, 2, "Goodbye")
+```
+
+Tuples only have two built-in methods which are `.count()` and `.index()`:
+
+```{code-cell}
+first_occurrence = my_tuple.index(2)
+print(f"The first occurrence of 2 is at index: {first_occurrence}.")
+
+count_of_twos = my_tuple.count(2)
+print(f"The number 2 appears {count_of_twos} times in the tuple.")
+```
+
+In case you still need a mutable version of the tuple, you can convert any tuple to a list by using the `list()` function:
+
+```{code-cell}
+my_list = list(my_tuple)
+```
+
+### Dictionaries
+
+Dictionaries (*dicts*) are another popular data structure in Python. In short, dicts are mappings from keys to values. You can think of them as key-value pairs, where keys within a single dictionary need to be unique, while the values do not. Most programming languages have similar structures, for example *maps* [in MATLAB](https://de.mathworks.com/help/matlab/ref/containers.map.html).
+
+Dictionaries are created by using curly brackets, and can either be initialized as empty or with key-value pairs separated by commas:
+
+```{code-cell}
+empty_dict = {}
+
+example_dict = {
+  "name": "Alice",
+  "age": 26,
+  1: "integer_key",
+  (1, 2): "tuple_key",
+  "list_value:": [0.5, 0.3]
+}
+```
+
+As you can see, dicts are quite versatile. Keys are required to be *immutable* like a string, number, or tuple (this is so they do not unexpectedly change during your program and make things really messy). The values, however, can be of any type you want!
+
+Accessing values stored in a dictionary is slightly different. While you previously accessed items in lists by their index, values in a dictionary are not ordered and have to be accessed by their key. The syntax is identical to that used for list indexing, we specify the key as a string between square brackets:
+
+```{code-cell}
+example_dict["name"]
+```
+
+Dictionaries can be updated or, if the key does not exist yet, extended through the same []-based syntax, except you now have to make an assignement using the (=) operator:
+
+```{code-cell}
+example_dict["age"] = 27
+example_dict
+```
+
+```{admonition} Summary
+:class: tip
+
+The three main collection types in Python are:
+
+- Lists `my_list = ["a","b","c"]`
+- Tuples `my_tuple = (1,2,3)`
+- Dictionaries `my_dict = {"course": "psy111"}`
+
+There are many resources available for working with data structures, such as the [Python documentation](https://docs.python.org/3/tutorial/datastructures.html#dictionaries).
 ```

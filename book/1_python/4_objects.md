@@ -14,7 +14,7 @@ kernelspec:
 
 # <i class="fa-brands fa-python"></i> Functions and Objects
 
-In the previous sessions you learned about basic variables and data types of the Python programming language. Now, we will build on that by discussing more building blocks like flow control and functions. We will also dive into some more detailed features of Python and learn about objects and classes.
+In the previous sessions you learned about basic variables and data types. Now, we will build on that by discussing more building blocks like flow control and functions. We will also dive into some more detailed features of Python and learn about objects and classes.
 
 
 ## Everything is an Object
@@ -86,9 +86,7 @@ Everything in Python is an object!
 
 Python is a high-level, dynamic programming language often associated with flexibility (for example, you do  not need to explicitly declare the type of your variables), but there are other cases in which Python is very strict (for example when it comes to the whitespace). Another strict thing about Python is that it takes *namespaces* very seriously.
 
-If you are used to other programming languages like MATLAB or R, you might expect to have hundreds of functions available to call as soon as you start your script. By contrast, Python only offers a very small built-in namespace, which means the number of functions you can use is very small. This is done on purpose, you are expected to carefully manage the namespace and functions you use.
-
-If you require any additional functions, you will need to *import* it from whatever module (=package) it is in via the `import` statement. While this might seem strange at first, you will see that it significantly improves readability and code clarity compared to, for example, MATLAB. As an example, you might want to use the square root for some kind of calculations. The corresponding function would be `sqrt()` in the `math` module:
+If you require any additional functions, you will need to *import* it from whatever module it is in via the `import` statement. While this might seem strange at first, you will see that it significantly improves readability. As an example, you might want to use the square root for some kind of calculations. The corresponding function would be `sqrt()` in the `math` module:
 
 ```{code-cell} ipython3
 import math
@@ -101,17 +99,19 @@ The previous code cell imports the entire math module, which means you will also
 
 ```{code-cell} ipython3
 from math import sqrt
-print(sqrt(9))
+
+sqrt(9)
 ```
 
 or you can rename them:
 
 ```{code-cell} ipython3
 import numpy as np
-print(np.sqrt(9))
+
+np.sqrt(9)
 ```
 
-In the previous examples, we use the square root function from two different packages. First, directly from the math library so we can omit the `math.` prefix in the following code. Second, from the numpy library which we call `np` (so we don't have to write numpy all the time). As a rule of thumb, you should import an entire module if you use many of its functions and only a single function if you do not need anything else from that module. This approach helps in keeping the namespace clean and improves code readability.
+In the previous examples, we use the square root function from two different packages. First, directly from the math library so we can omit the `math.` prefix in the following code. Second, from the numpy library which we call `np` (so we don't have to write numpy all the time).
 
 Sometimes it might also be the case that a module has submodules. For example, if we want to use `numpy` to generate a random integer number between 1 and 10, we can use the `randint()` function which is located in its `random` submodule. As you usually use many functions from the `numpy` package, you will see that people usually import the `numpy` module once at the top of the script and then use it as follows:
 
@@ -153,8 +153,7 @@ Functions can accept *arguments* (or parameters) that provide inputs or modify t
 def add(a, b):
   return a + b
 
-result = add(1, 2)
-print(result)
+add(1, 2)
 ```
 
 Python functions can have two different kinds of arguments: *positional* arguments, and *keyword* arguments. Positional arguments on the one hand are defined by their position whithin the round brackets and *must* be provided for the function to run without giving an error. In the previous example, both `a` and `b` are positional arguments and the function would not know what to do if any of them would be missing. Keyword arguments on the other hand are assigned a *default* value. This means that the function knows what to do even if the user does not explicitly provide a value for that argument. 
@@ -187,7 +186,7 @@ def add_noise(x, mu=0, sd=1):
   return x + noise
 ```
 
-*Note:* So far, you have mostly seen comments within the code using the `#` sign. Another way to provide comments is by using triple double quotes `"""comment"""`, as shown in the previous code snippet. This approach is useful for providing larger portions of text, such as when documenting your functions. In the `add_noise()` function, you can see an example where the input and output parameters are clearly described, making it easier to understand how to use the function. This is also the official way of documenting functions and classes in Python, so it is recommended to follow this convention.
+*Note:* So far, you have mostly seen comments within the code using the `#` sign. Another way to provide comments is by using triple double quotes `"""comment"""`, as shown in the previous code snippet. This approach is useful for providing larger portions of text, such as when documenting your functions. This is also the official way of documenting functions and classes in Python, so it is recommended to follow this convention.
 
 If we now call this function by just providing a value for `x`it will still work as expected by using a mean of 0 and a standard deviation of 1 to calculate and add the noise.
 
