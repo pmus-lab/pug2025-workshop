@@ -14,4 +14,9 @@ kernelspec:
 
 # <i class="fa-solid fa-rocket"></i> Application to Neuroimaging
 
-<iframe width="800" height="450" src="../../_static/placeholder_slides.pdf" frameborder="0" allowfullscreen></iframe>
+<iframe width="800" height="450" src="../../_static/multiverse_application.pdf" frameborder="0" allowfullscreen></iframe>
+
+
+## Group Activity
+
+<iframe width="800" height="450" src="../../_static/multiverse_activity.pdf" frameborder="0" allowfullscreen></iframe>

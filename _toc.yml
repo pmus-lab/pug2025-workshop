@@ -14,11 +14,11 @@ parts:
     - file: book/1_python/6_neuroimaging
     - file: book/1_python/7_exercises
       sections:
-        - file: book/1_python/exercises/data_structures_ex
-        - file: book/1_python/exercises/control_flow_ex
-        - file: book/1_python/exercises/objects_ex
-        - file: book/1_python/exercises/scientific_comp_ex
-        - file: book/1_python/exercises/neuroimaging_ex
+        - file: book/1_python/exercises/data_structures
+        - file: book/1_python/exercises/control_flow
+        - file: book/1_python/exercises/objects
+        - file: book/1_python/exercises/scientific_comp
+        - file: book/1_python/exercises/neuroimaging
 - caption: Multiverse Analysis
   chapters:
     - file: book/2_multiverse/multiverse_theory
@@ -32,7 +32,11 @@ parts:
   chapters:
     - file: book/4_additional/solutions
       sections:
-        - file: book/4_additional/solutions_python
-        - file: book/4_additional/solutions_fmri
-        - file: book/4_additional/solutions_eeg
+        - file: book/4_additional/solutions/data_structures
+        - file: book/4_additional/solutions/control_flow
+        - file: book/4_additional/solutions/objects
+        - file: book/4_additional/solutions/scientific_comp
+        - file: book/4_additional/solutions/fmri_multiverse
+        - file: book/4_additional/solutions/eeg_multiverse
+
     - file: book/4_additional/references

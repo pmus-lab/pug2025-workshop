@@ -18,14 +18,14 @@ Neuroimaging libraries depend on the specific modality you are dealing with. Whi
 
 ## fMRI
 
-**NiBabel**
+### NiBabel
 
 Core I/O support for neuroimaging file formats (NIfTI, Analyze, MGH, MINC, etc.). Provides utilities to load, save, and manipulate image headers and data arrays.
 
 - PyPI: https://pypi.org/project/nibabel/
 - Docs: https://nipy.org/nibabel/
 
-**Nilearn**
+### Nilearn
 
 High-level statistical learning and visualization on neuroimaging data. Built on scikit-learn, it offers functions for decoding, predictive modeling, functional connectivity, and easy plotting of brain maps.
 
@@ -38,12 +38,13 @@ High-level statistical learning and visualization on neuroimaging data. Built on
 Let's look at some real data to get a better sense of why arrays are a useful thing to use. We use the `nilearn` package to load fMRI data of a single subject from the ADHD dataset and then convert the data into a numpy array with the `nibabel` package:
 
 ```{code-cell} ipython3
-from nilearn import datasets
 import nibabel as nib
+from nilearn import datasets
 
 haxby_dataset = datasets.fetch_adhd(n_subjects=1); # Download data
 fmri_img = nib.load(haxby_dataset.func[0])         # Load the fMRI image
 fmri_data = fmri_img.get_fdata()                   # Get data as a 4D array
+
 print(f"Shape of the fMRI data: {fmri_data.shape}")
 ```
 
@@ -72,25 +73,31 @@ plotting.plot_epi(mean_image);
 Connectivity based analyses can be performed the following way:
 
 ```{code-cell} ipython3
-from nilearn.maskers import NiftiMapsMasker
 from nilearn import datasets
+from nilearn.maskers import NiftiMapsMasker
+
+# Get data
+data = datasets.fetch_development_fmri(n_subjects=1, verbose=0)
+print(f"First subject functional nifti images (4D) are at: {data.func[0]}")
 
 # Get atlas
 atlas = datasets.fetch_atlas_msdl()
 atlas_filename = atlas["maps"]
 labels = atlas["labels"]
 
-# Get data
-data = datasets.fetch_development_fmri(n_subjects=1, verbose=0)
-print(f"First subject functional nifti images (4D) are at: {data.func[0]}")
-
 # Extract time series
 masker = NiftiMapsMasker(maps_img=atlas_filename, standardize="zscore_sample", standardize_confounds="zscore_sample")
 time_series = masker.fit_transform(data.func[0], confounds=data.confounds)
+print("Parcellated fMRI time series shape:", time_series.shape)
 
 # Estimate functional connectivity with pearson correlation
 fc = np.corrcoef(time_series.T)
+print("Connectivity matrix shape:", fc.shape)
+```
 
+Once we have the symmetric connectivity matrix, we can use it for visualization purposes:
+
+```{code-cell} ipython3
 # Plot connectivity matrix
 plotting.plot_matrix(fc, labels=labels, figure=(9, 7), vmax=1, vmin=-1, title="Functional Connectivity",);
 
@@ -100,10 +107,9 @@ plotting.plot_connectome(fc, coords, title="Functional Connectome", edge_thresho
 ```
 
 
-
 ## EEG
 
-**MNE-Python**
+### MNE-Python
 
 The go-to package for EEG/MEG data: supports raw‐data I/O (EDF, BDF, BrainVision, etc.), preprocessing (filtering, ICA, SSP), epoching, time-frequency analysis, source localization (via FreeSurfer), connectivity, and powerful visualization routines.
 
@@ -113,7 +119,7 @@ The go-to package for EEG/MEG data: supports raw‐data I/O (EDF, BDF, BrainVisi
 
 ### Usage Example
 
-We can plot some evoked potentials
+The following example loads some MNE example data and plots the condition-average ERP waveforms as well as topographies:
 
 ```{code-cell} ipython3
 import mne
@@ -130,10 +136,8 @@ events = mne.read_events(events_file)
 # Crop the data from 450 to 90 seconds
 raw.crop(tmax=90)
 
-# Pick and rename channels
+# Pick channels
 raw.pick(['eeg', 'eog'])
-channel_renaming_dict = {name: name.replace(" 0", "").lower() for name in raw.ch_names}
-raw.rename_channels(channel_renaming_dict)
 
 # Filtering
 raw.filter(l_freq=0.1, h_freq=None, verbose=False)
@@ -155,7 +159,7 @@ epochs = mne.Epochs(raw, events, event_id=event_dict, tmin=-0.3, tmax=0.6, prelo
 # Drop bad epochs
 epochs.drop_bad(reject=dict(eeg=100e-6, eog=200e-6), verbose=False)  # 100 µV, 200 µV
 
-# Plot ERPs and topographies
+# Plot ERP waveforms and topographies
 l_aud = epochs["auditory/left"].average()
 l_aud.plot_joint();
 ```

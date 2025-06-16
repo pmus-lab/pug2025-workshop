@@ -14,4 +14,4 @@ kernelspec:
 
 # <i class="fa-solid fa-rocket"></i> Theory and Conceptualization
 
-<iframe width="800" height="450" src="../../_static/placeholder_slides.pdf" frameborder="0" allowfullscreen></iframe>
+<iframe width="800" height="450" src="../../_static/multiverse_concept.pdf" frameborder="0" allowfullscreen></iframe>
