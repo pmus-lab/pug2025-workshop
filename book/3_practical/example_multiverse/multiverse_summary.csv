@@ -1,4 +1,4 @@
-Universe,Decision 1,Value 1,Decision 2,Value 2,Decision 3,Value 3,Decision 4,Value 4,Decision 5,Value 5
-Universe_1,strings,'Hello',numbers,1.0,tuples,"(1, 2)",functions,type(x),functions2,custom name
-Universe_2,strings,'Hello',numbers,2.0,tuples,"(1, 2)",functions,type(x),functions2,custom name
-Universe_3,strings,'Hello',numbers,3.0,tuples,"(1, 2)",functions,type(x),functions2,custom name
+Universe,Decision 1,Value 1,Decision 2,Value 2,Decision 3,Value 3,Decision 4,Value 4
+Universe_1,strings,'Hello',numbers,1.0,tuples,"(1, 2)",functions,type
+Universe_2,strings,'Hello',numbers,2.0,tuples,"(1, 2)",functions,type
+Universe_3,strings,'Hello',numbers,3.0,tuples,"(1, 2)",functions,type
