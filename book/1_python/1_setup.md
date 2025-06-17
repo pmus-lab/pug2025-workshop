@@ -140,7 +140,7 @@ Markdown is a way of writing and formatting text. In fact, all the text in this 
 
 Create either a standard `.py` Python script or a `.ipynb` Jupyter Notebook and run the following code to test your environment:
 
-```{code-cell} ipython3 ipython3
+```{code-block} ipython3
 # Test the imports
 import comet
 import mne
