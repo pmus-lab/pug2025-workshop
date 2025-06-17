@@ -26,8 +26,8 @@ parts:
 - caption: Practical Projects
   chapters:
     - file: book/3_practical/0_comet
-    - file: book/3_practical/1_fmri_multiverse
-    - file: book/3_practical/2_eeg_multiverse
+    - file: book/3_practical/1_eeg_multiverse
+    - file: book/3_practical/2_fmri_multiverse
 - caption: Additional Materials
   chapters:
     - file: book/4_additional/solutions
@@ -36,7 +36,8 @@ parts:
         - file: book/4_additional/solutions/control_flow
         - file: book/4_additional/solutions/objects
         - file: book/4_additional/solutions/scientific_comp
-        - file: book/4_additional/solutions/fmri_multiverse
         - file: book/4_additional/solutions/eeg_multiverse
+        - file: book/4_additional/solutions/fmri_multiverse
+
 
     - file: book/4_additional/references
