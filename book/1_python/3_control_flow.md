@@ -100,7 +100,7 @@ Now, as long as it’s sunny or warm, you’ll go outside. If neither condition 
 ```
 
 
-# Loops
+## Loops
 
 Now, we will have a look at how we cann use looping operations to simplify repetition, allowing us to perform tasks across items or count through fixed numbers efficiently.
 
